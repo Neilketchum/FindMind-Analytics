@@ -1,0 +1,82 @@
+
+
+html {
+  font-size: 62.5%; /* Will make 1rem = 10px */
+}
+
+.Signup {
+  font-size: 1.4rem; /* font-size: 14px; */
+  background-color: #38a5dd;
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  color: white;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  background: #f4f4fc;
+  padding: 8rem;
+  border: 5px solid #f4f4fc;
+  border-radius: 10px;
+  
+}
+
+form * {
+  display: block;
+}
+
+input {
+  padding: 1rem;
+  background: #f4f4fc;
+  font-weight: 800;
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+ 
+}
+
+label {
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+    background-color:#f4f4fc ;
+    font-size: 1.2rem;
+    left: 7rem;
+    top: 0.8rem;
+    padding: 2px;
+    padding-left:10px ;
+    padding-right:10px ;
+    width: max-content;
+}
+
+
+#submit {
+  padding: 1rem 2rem;
+  background: linear-gradient(to bottom right, #38a5dd, #0a65ef);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin: auto;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 10px rgba(10, 101, 239, 0.3);
+ margin-top: 30px;
+ 
+}
+
+.signup__checkbox{
+    display: flex;
+}
