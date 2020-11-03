@@ -23,7 +23,8 @@ function TaskBoard() {
         setformdata(formdata=>[...formdata,{
             taskName: taskName,
             taskdesc: taskdesc,
-            date: date
+            date: date,
+            completed:false
         }])
         console.log(formdata)
     }
@@ -72,7 +73,7 @@ function TaskBoard() {
                         </form>
                     </div> : <></>}
                     {formdata.length>0?formdata.map((data) => (
-                            <RenderFormData taskName = {data.taskName} taskdesc = {data.taskdesc} date = {date} />
+                            <RenderFormData taskName = {data.taskName} taskdesc = {data.taskdesc} date = {date} completed = {data.completed} />
                             )):<></>}
 
                 </div>
