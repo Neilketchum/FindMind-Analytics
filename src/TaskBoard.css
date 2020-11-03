@@ -1,0 +1,50 @@
+
+.taskBoard{
+    height: 100vh;
+}
+.tasks{
+
+}
+.task{
+    margin-top: 100px;
+    border:1px solid blue;
+    padding: 2rem;
+    width:300px;
+    height: fit-content;
+    margin-left:100px ;
+}
+.task__header{
+    display: flex;
+    flex-direction: row;
+}
+.task__heading{
+    margin-bottom: 20px;
+}
+.task__header >p{
+    margin-top: -6px;
+    margin-left:20px ;
+    font-size: 2rem;
+}
+
+.taskNav{
+    display: flex;
+    justify-content: space-between;
+}
+.form{
+    z-index: 20;
+    position: absolute;
+    left: 35%;
+    top:14%;
+    border:0px solid black;
+    width: fit-content;
+    padding: 40px;
+    height: fit-content;
+    box-shadow: 2px 2px 10px 3px #888888;
+    display: flex;
+    flex-direction: column;
+}
+.datePick{
+    margin-top: 10px;
+   
+}
+
