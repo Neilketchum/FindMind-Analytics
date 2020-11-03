@@ -45,6 +45,27 @@
 }
 .datePick{
     margin-top: 10px;
-   
 }
-
+.task_notComplete{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.task_notComplete_head{
+    margin-left:20px ;
+    margin-top: -0.6px;
+    font-size: 17px;
+}
+.task__alarm{
+    flex:0.65;
+    margin-left: auto;
+    font-weight: 800;
+    
+}
+.task__desc{
+    padding-left: 20px;
+    padding-right:35px;
+    background-color: azure;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}

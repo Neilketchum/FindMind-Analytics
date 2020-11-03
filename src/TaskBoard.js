@@ -9,15 +9,24 @@ import Button from '@material-ui/core/Button';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
-import AlarmIcon from '@material-ui/icons/Alarm';
+import RenderFormData from './RenderFormData';
 function TaskBoard() {
     const [modal, setmodal] = useState(false);
     const [date, setDate] = useState(new Date());
-
+    const [taskName, settaskName] = useState("");
+    const [taskdesc, settaskdesc] = useState("");
+    const [formdata, setformdata] = useState([]);
     const handleCalendarClose = () => console.log("Calendar closed");
     const handleCalendarOpen = () => console.log("Calendar opened");
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setformdata(formdata=>[...formdata,{
+            taskName: taskName,
+            taskdesc: taskdesc,
+            date: date
+        }])
+        console.log(formdata)
+    }
     const addTask = () => {
         setmodal(!modal)
     }
@@ -38,15 +47,16 @@ function TaskBoard() {
                     </div>
                     {modal ? <div className="task__form">
                         <form className="form">
-                            <DeleteOutlinedIcon onClick = {()=>setmodal(false)} style={{ fontSize: "30px",cursor:"pointer" }}></DeleteOutlinedIcon>
+                            <DeleteOutlinedIcon onClick={() => setmodal(false)} style={{ fontSize: "30px", cursor: "pointer" }}></DeleteOutlinedIcon>
                             <p></p>
-                            <TextField label="Enter Task Name" style={{ width: "350px", marginBottom: "12px" }} variant="outlined" />
+                            <TextField onChange={(e) => settaskName(e.target.value)} label="Enter Task Name" style={{ width: "350px", marginBottom: "12px" }} variant="outlined" />
                             <TextField
                                 id="filled-multiline-static"
                                 label="Add Details"
                                 multiline
                                 rows={4}
                                 variant="filled"
+                                onChange={(e) => settaskdesc(e.target.value)}
                             />
                             <div className="datePick">
                                 <DatePicker
@@ -56,17 +66,15 @@ function TaskBoard() {
                                     onCalendarOpen={handleCalendarOpen}
                                 />
                             </div>
-                            <Button variant="contained" color="primary" type = "submit">
+                            <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}>
                                 Add Task
                             </Button>
                         </form>
                     </div> : <></>}
-                    <div className = "task_notComplete">
-                        <RadioButtonUncheckedIcon/>
-                            Campus Build
-                        <AlarmIcon/>
-                    </div>
-                    
+                    {formdata.length>0?formdata.map((data) => (
+                            <RenderFormData taskName = {data.taskName} taskdesc = {data.taskdesc} date = {date} />
+                            )):<></>}
+
                 </div>
 
 
