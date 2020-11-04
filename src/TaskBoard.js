@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Navbar from './Navbar'
 import "./TaskBoard.css"
 import AddCircleRoundedIcon from '@material-ui/icons/AddCircleRounded';
@@ -8,7 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RenderFormData from './RenderFormData';
 function TaskBoard() {
     const [modal, setmodal] = useState(false);
@@ -31,10 +31,10 @@ function TaskBoard() {
     const addTask = () => {
         setmodal(!modal)
     }
+   
     return (
         <div className="taskBoard">
             <Navbar />
-
             <div className="tasks">
                 <div className="task">
                     <div className="taskNav">
@@ -77,7 +77,7 @@ function TaskBoard() {
                             )):<></>}
 
                 </div>
-
+                <AddCircleIcon style = {{position:"absolute",right:"5%",bottom:"5%",color:"blue",fontSize:"7rem",cursor:'pointer',}}/>
 
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,15 +18,19 @@ const useStyles = makeStyles((theme) => ({
   }));
 function Navbar() {
     const classes = useStyles();
-
+    const [avatar,setAvatar] = useState("");
+    var randomValue = Math.floor(Math.random() * 1000);
+    useEffect(() => {
+      fetch(`https://picsum.photos/id/${randomValue}/info`).then(res=>res.json()).then((data)=>setAvatar(data.download_url))
+    })
     return (
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              News
+              
             </Typography>
-            <Button><Avatar alt="Remy Sharp" src="https://i.picsum.photos/id/77/1631/1102.jpg?hmac=sg0ArFCRjP1wlUg8vszg5RFfGiXZJkWEtqLLCRraeBw" /></Button>
+            <Button><Avatar alt="Remy Sharp" src={avatar} /></Button>
           </Toolbar>
         </AppBar>
       </div>

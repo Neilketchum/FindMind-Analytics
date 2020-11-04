@@ -80,3 +80,7 @@ label {
 .signup__checkbox{
     display: flex;
 }
+.btns{
+  display:flex;
+  justify-content: space-between;
+}

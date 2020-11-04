@@ -3,11 +3,27 @@ import './App.css';
 import Signup from './Signup';
 import Signin from './Signin';
 import TaskBoard from './TaskBoard';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <TaskBoard/>
+      {/* <Signup /> */}
+      <Router>
+      <Route path="/main" exact>
+            <TaskBoard />
+          </Route>
+          <Route path="/login" exact>
+            <Signin />
+          </Route>
+          <Route path="/" exact>
+            <Signup />
+          </Route>
+      </Router>
     </div>
   );
 }
